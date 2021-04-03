@@ -37,11 +37,11 @@ void print_container_menu();
 string get_container_choice();
 
 // prints options of container methods to choose from
-void print_container_type_menu();
+void print_implement_type_menu();
 
 // prompt user to choose vector, dynamic array, doubly linked list, or list,
 // return choice
-string get_container_type();
+string get_implement_type();
 
 // print options for manipulating a stack container
 void print_stack_menu();

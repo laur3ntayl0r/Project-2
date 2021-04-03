@@ -38,7 +38,7 @@ string get_container_choice() {
 }
 
 // prints options of container methods to choose from
-void print_container_type_menu() {
+void print_implement_type_menu() {
     cout << "Which container implementation method would you like to test?\n\n";
     cout << "Type 1 to test the container using STL vector\n";
     cout << "Type 2 to test the container using a dynamic array\n";
@@ -49,11 +49,11 @@ void print_container_type_menu() {
 
 // prompt user to choose vector, dynamic array, doubly linked list, or list,
 // return choice
-string get_container_type() {
+string get_implement_type() {
     string choice = "";
 
     do {
-        print_container_type_menu();
+        print_implement_type_menu();
         cin >> choice;
         cout << endl << endl;
 

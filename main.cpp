@@ -24,7 +24,7 @@ int main() {
     do {
         string choice = get_container_choice();
 
-        string choice2 = get_container_type();
+        string choice2 = get_implement_type();
 
         choice == "1" ? make_stack(choice2) : make_queue(choice2);
 
