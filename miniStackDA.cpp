@@ -6,7 +6,7 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "miniStackDA.h"
@@ -76,12 +76,10 @@ void miniStackDA<DataType>::PrintStack() const {
         cout << "stack empty";
 
     else {
-        cout << "(top)\t";
+        cout << "(top) ";
 
         for (int i = elementCount - 1; i >= 0; i--)
             cout << content[i] << " ";
-
-        cout << "\t(bottom)";
     }
 
     cout << endl << endl;

@@ -6,7 +6,7 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #ifndef MINISTACKLT_H
@@ -14,6 +14,8 @@
 
 #include <list>
 using std::list;
+#include <iostream>
+#include <iterator>
 
 template <class DataType>
 class miniStackLT {

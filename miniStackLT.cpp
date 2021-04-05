@@ -6,12 +6,10 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "miniStackLT.h"
-#include <iostream>
-#include <iterator>
 using namespace std;
 
 template <class DataType>
@@ -46,13 +44,11 @@ void miniStackLT<DataType>::PrintStack() const {
         cout << "stack empty";
 
     else {
-        cout << "(top)\t";
+        cout << "(top) ";
 
-        typename list<DataType>::const_reverse_iterator rit;
-        for (rit = content.rbegin(); rit != content.rend(); rit++)
-            cout << *rit << " ";
-
-        cout << "\t(bottom)";
+        typename list<DataType>::const_reverse_iterator crit;
+        for (crit = content.rbegin(); crit != content.rend(); crit++)
+            cout << *crit << " ";
     }
 
     cout << endl << endl;

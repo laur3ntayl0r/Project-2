@@ -6,7 +6,7 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "miniQueueVT.h"
@@ -62,12 +62,10 @@ void miniQueueVT<DataType>::PrintQueue() const {
         cout << "queue empty";
 
     else {
-        cout << "(front)\t";
+        cout << "(front) ";
 
         for (int i = 0; i < content.size(); i++)
             cout << content[i] << " ";
-
-        cout << "\t(back)";
     }
 
     cout << endl << endl;

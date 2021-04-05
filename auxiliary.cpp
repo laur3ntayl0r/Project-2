@@ -5,7 +5,7 @@
 
     Lauren Taylor
     Created: 31 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "auxiliary.h"
@@ -96,170 +96,65 @@ string get_stack_option() {
 // stack container main interface
 void make_stack(const string ch) {
     if (ch == "1") {    // option: STL vector
-        make_stack_VT();
+        miniStackVT<string> stackVT;
+        perform_stack_options(stackVT);
 
     } else if (ch == "2") {     // option: dynamic array
-        make_stack_DA();
+        //make_stack_DA();
+        miniStackDA<string> stackDA;
+        perform_stack_options(stackDA);
 
     } else if (ch == "3") {     // option: STL list
-        make_stack_LT();
+        //make_stack_LT();
+        miniStackLT<string> stackLT;
+        perform_stack_options(stackLT);
 
     } else {        // option: doubly linked list
-        make_stack_DL();
+        //make_stack_DL();
+        miniStackDL<string> stackDL;
+        perform_stack_options(stackDL);
     }
 }
 
-// beginning stack dynamic array process
-void make_stack_DA() {
-    miniStackDA<string> stack;
-    string choice = "";
+
+template <class DataType>
+void perform_stack_options(DataType &stack) {
+    string option = "";
 
     do {
-        string option = get_stack_option();
+        option = get_stack_option();
 
         if (option == "1") {    // push element
             stack.Push(get_new_stack_element());
             cout << "The stack now contains:\n\n";
             stack.PrintStack();
-            cout << endl << endl;
+            cout << endl;
 
         } else if (option == "2") {     // pop element
             stack.Pop();
             cout << "The stack now contains:\n\n";
             stack.PrintStack();
-            cout << endl << endl;
+            cout << endl;
 
         } else if (option == "3") {     // print all elements
             stack.PrintStack();
-            cout << endl << endl;
+            cout << endl;
 
         } else if (option == "4") {     // print top element
-            cout << "The top element is: ";
-            cout << stack.TopStack() << endl << endl;
+            cout << "The top element is ";
+            cout << stack.TopStack() << endl << endl << endl;
 
         } else if (option == "5") {        // print size of stack
-            cout << "The stack size is: ";
-            cout << stack.size() << endl << endl;
-
-        } else {
-            return;
-        }
-    } while (choice != "6");
-}
-
-// beginning stack doubly linked list process
-void make_stack_DL() {
-    miniStackDL<string> stack;
-    string choice = "";
-
-    do {
-        string option = get_stack_option();
-
-        if (option == "1") {    // push element
-            stack.Push(get_new_stack_element());
-            cout << "The stack now contains:\n\n";
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "2") {     // pop element
-            stack.Pop();
-            cout << "The stack now contains:\n\n";
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "3") {     // print all elements
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "4") {     // print top element
-            cout << "The top element is: ";
-            cout << stack.TopStack() << endl << endl;
-
-        } else if (option == "5") {        // print size of stack
-            cout << "The stack size is: ";
-            cout << stack.size() << endl << endl;
-
-        } else {
-            return;
-        }
-    } while (choice != "6");
-}
-
-// beginning stack STL list process
-void make_stack_LT() {
-    miniStackLT<string> stack;
-    string choice = "";
-
-    do {
-        string option = get_stack_option();
-
-        if (option == "1") {    // push element
-            stack.Push(get_new_stack_element());
-            cout << "The stack now contains:\n\n";
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "2") {     // pop element
-            stack.Pop();
-            cout << "The stack now contains:\n\n";
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "3") {     // print all elements
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "4") {     // print top element
-            cout << "The top element is: ";
-            cout << stack.TopStack() << endl << endl;
-
-        } else if (option == "5") {        // print size of stack
-            cout << "The stack size is: ";
-            cout << stack.size() << endl << endl;
-
-        } else {
-            return;
-        }
-    } while (choice != "6");
-}
-
-// beginning stack STL vector process
-void make_stack_VT() {
-    miniStackVT<string> stack;
-    string choice = "";
-
-    do {
-        string option = get_stack_option();
-
-        if (option == "1") {    // push element
-            stack.Push(get_new_stack_element());
-            cout << "The stack now contains:\n\n";
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "2") {     // pop element
-            stack.Pop();
-            cout << "The stack now contains:\n\n";
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "3") {     // print all elements
-            stack.PrintStack();
-            cout << endl << endl;
-
-        } else if (option == "4") {     // print top element
-            cout << "The top element is: ";
-            cout << stack.TopStack() << endl << endl;
-
-        } else if (option == "5") {        // print size of stack
-            cout << "The stack size is: ";
+            cout << "The stack size is ";
             cout << stack.size() << endl << endl << endl;
 
         } else {
             return;
         }
-    } while (choice != "6");
+        
+    } while (option != "6");
 }
+
 
 // get element to add to stack from user
 string get_new_stack_element() {
@@ -315,42 +210,45 @@ string get_queue_option() {
 // queue container main interface
 void make_queue(const string ch) {
     if (ch == "1") {    // option: STL vector
-        make_queue_VT();
+        miniQueueVT<string> queueVT;
+        perform_queue_options(queueVT);
 
     } else if (ch == "2") {     // option: dynamic array
-        make_queue_DA();
+        miniQueueDA<string> queueDA;
+        perform_queue_options(queueDA);
 
     } else if (ch == "3") {     // option: STL list
-        make_queue_LT();
+        miniQueueLT<string> queueLT;
+        perform_queue_options(queueLT);
 
     } else {        // option: doubly linked list
-        make_queue_DL();
+        miniQueueDL<string> queueDL;
+        perform_queue_options(queueDL);
     }
 }
 
-// beginning queue dynamic array process
-void make_queue_DA() {
-    miniQueueDA<string> queue;
-    string again = "";
+template <class DataType>
+void perform_queue_options(DataType &queue) {
+    string option = "";
 
     do {
-        string option = get_queue_option();
+        option = get_queue_option();
 
         if (option == "1") {    // enqueue
             queue.enqueue(get_new_queue_element());
             cout << "The queue now contains:\n\n";
             queue.PrintQueue();
-            cout << endl << endl;
+            cout << endl;
 
         } else if (option == "2") {     // dequeue
             queue.dequeue();
             cout << "The queue now contains:\n\n";
             queue.PrintQueue();
-            cout << endl << endl;
+            cout << endl;
 
         } else if (option == "3") {     // print all elements
             queue.PrintQueue();
-            cout << endl << endl;
+            cout << endl;
 
         } else if (option == "4") {     // print front element
             cout << "The front element is: ";
@@ -365,128 +263,9 @@ void make_queue_DA() {
             return;
         }
 
-    } while (again != "6");
+    } while (option != "6");
 }
 
-// beginning queue doubly linked list process
-void make_queue_DL() {
-    miniQueueDL<string> queue;
-    string again = "";
-
-    do {
-        string option = get_queue_option();
-
-        if (option == "1") {    // enqueue
-            queue.enqueue(get_new_queue_element());
-            cout << "The queue now contains:\n\n";
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "2") {     // dequeue
-            queue.dequeue();
-            cout << "The queue now contains:\n\n";
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "3") {     // print all elements
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "4") {     // print front element
-            cout << "The front element is: ";
-            cout << queue.front() << endl << endl << endl;
-
-        } else if (option == "5") {        // print size of queue
-            cout << "The size of the queue is: ";
-            cout << queue.size();
-            cout << endl << endl << endl;
-
-        } else {
-            return;
-        }
-
-    } while (again != "6");
-}
-
-// beginning queue STL list process
-void make_queue_LT() {
-    miniQueueLT<string> queue;
-    string again = "";
-
-    do {
-        string option = get_queue_option();
-
-        if (option == "1") {    // enqueue
-            queue.enqueue(get_new_queue_element());
-            cout << "The queue now contains:\n\n";
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "2") {     // dequeue
-            queue.dequeue();
-            cout << "The queue now contains:\n\n";
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "3") {     // print all elements
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "4") {     // print front element
-            cout << "The front element is: ";
-            cout << queue.front() << endl << endl << endl;
-
-        } else if (option == "5") {        // print size of queue
-            cout << "The size of the queue is: ";
-            cout << queue.size();
-            cout << endl << endl << endl;
-
-        } else {
-            return;
-        }
-
-    } while (again != "6");
-}
-
-// beginning queue STL vector process
-void make_queue_VT() {
-    miniQueueVT<string> queue;
-    string again = "";
-
-    do {
-        string option = get_queue_option();
-
-        if (option == "1") {    // enqueue
-            queue.enqueue(get_new_queue_element());
-            cout << "The queue now contains:\n\n";
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "2") {     // dequeue
-            queue.dequeue();
-            cout << "The queue now contains:\n\n";
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "3") {     // print all elements
-            queue.PrintQueue();
-            cout << endl << endl;
-
-        } else if (option == "4") {     // print front element
-            cout << "The front element is: ";
-            cout << queue.front() << endl << endl << endl;
-
-        } else if (option == "5") {        // print size of queue
-            cout << "The size of the queue is: ";
-            cout << queue.size();
-            cout << endl << endl << endl;
-
-        } else {
-            return;
-        }
-
-    } while (again != "6");
-}
 
 // get element to add to queue from user
 string get_new_queue_element() {

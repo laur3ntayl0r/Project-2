@@ -6,7 +6,7 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "miniQueueDL.h"
@@ -27,8 +27,8 @@ miniQueueDL<T>::~miniQueueDL() {
     DNode<T> *curr = head;
 
     while (curr != NULL) {
-        delete curr;
-        curr = curr->next;
+        delete head;
+        head = curr = curr->next;
     }
 }
 
@@ -111,14 +111,12 @@ void miniQueueDL<T>::PrintQueue() const {
     else {
         DNode<T>* curr = head;
 
-        cout << "(front)\t";
+        cout << "(front) ";
 
         while (curr != NULL) {
             cout << curr->nodeValue << " ";
             curr = curr->next;
         }
-
-        cout << "\t(back)";
     }
     
     cout << endl << endl;

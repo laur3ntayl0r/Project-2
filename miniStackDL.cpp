@@ -6,7 +6,7 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "miniStackDL.h"
@@ -27,8 +27,8 @@ miniStackDL<T>::~miniStackDL() {
     DNode<T> *curr = head;
 
     while (curr != NULL) {
-        delete curr;
-        curr = curr->next;
+        delete head;
+        head = curr = curr->next;
     }
 }
 
@@ -78,15 +78,13 @@ void miniStackDL<T>::PrintStack() const {
         // create node to keep track of current node
         DNode<T> *curr = tail;
 
-        cout << "(top)\t";
+        cout << "(top) ";
 
         // cycle through until last node is printed
         while (curr != NULL) {
             cout << curr->nodeValue << " ";
             curr = curr->prev;
         }
-
-        cout << "\t(bottom)";
     }
 
     cout << endl << endl;

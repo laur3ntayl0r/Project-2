@@ -6,7 +6,7 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "miniQueueLT.h"
@@ -69,13 +69,11 @@ void miniQueueLT<DataType>::PrintQueue() const {
         cout << "queue empty";
 
     else {
-        cout << "(front)\t";
+        cout << "(front) ";
 
         typename list<DataType>::const_iterator cit;
         for (cit = content.cbegin(); cit != content.cend(); cit++)
             cout << *cit << " ";
-
-        cout << "\t(back)";
     }
 
     cout << endl << endl;

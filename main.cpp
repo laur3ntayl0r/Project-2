@@ -9,7 +9,7 @@
 
     Lauren Taylor
     Created: 25 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
 
 #include "auxiliary.h"
@@ -33,9 +33,12 @@ int main() {
         cin >> again;
         cout << endl << endl;
 
+        if (again != "1" && again != "2")
+            cout << "Invalid input." << endl << endl;
+
     } while (again == "1");
 
-    cout << endl << "Goodbye!" << endl << endl;
+    cout << "Goodbye!" << endl << endl;
 
     return 0;
 }

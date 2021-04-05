@@ -5,8 +5,11 @@
 
     Lauren Taylor
     Created: 31 March 2021
-    Current: 3 April 2021
+    Current: 5 April 2021
 */
+
+#ifndef AUXILIARY_H
+#define AUXILIARY_H
 
 // including header files (which include .cpp files) for miniStacks
 #include "miniStackVT.h"
@@ -27,7 +30,6 @@
 #include <string>
 using std::string;
 #include <exception>
-
 
 
 // prints options of container types to choose from
@@ -52,17 +54,9 @@ string get_stack_option();
 // beginning stack container selection process
 void make_stack(const string);
 
-// beginning stack dynamic array process
-void make_stack_DA();
-
-// beginning stack doubly linked list process
-void make_stack_DL();
-
-// beginning stack STL list process
-void make_stack_LT();
-
-// beginning stack STL vector process
-void make_stack_VT();
+// performs manipulation and printing functions for stacks
+template <class DataType>
+void perform_stack_options(DataType &);
 
 // get element to add to stack from user
 string get_new_stack_element();
@@ -75,6 +69,10 @@ string get_queue_option();
 
 // beginning queue container selection process
 void make_queue(const string);
+
+// performs manipulation and printing functions for queues
+template <class DataType>
+void perform_queue_options(DataType &);
 
 // beginning queue dynamic array process
 void make_queue_DA();
@@ -90,3 +88,6 @@ void make_queue_VT();
 
 // get element to add to queue from user
 string get_new_queue_element();
+
+
+#endif  /* auxiliary.h */
